@@ -16,6 +16,6 @@ Host someinternalhost
 Создано Virtual Private Cloud (VPC) в которую включены 2 машины bastion (внешний ip 35.228.243.235, внутрений 10.166.0.2) и someinternalhost (внутрений ip 10.166.0.3). Настроен и проверен доступ по ssh как к машине bastion, так и подключение к someinternalhost через bastion.
 На машине bastion также установлен и настроен VPN-сервер Pritunl.
 
-bation_IP = 35.228.243.235
+bastion_IP = 35.228.243.235
 someinternalhost_IP = 10.166.0.3
 
