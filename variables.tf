@@ -24,6 +24,10 @@ variable disk_image {
   description = "Disk image"
 }
 
+variable provisioners_key_path {
+  description = "Path to the public key used for provisioners access"
+}
+
 variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "reddit-app-base"
