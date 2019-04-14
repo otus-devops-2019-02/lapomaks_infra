@@ -35,3 +35,15 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 testapp_IP = 35.228.159.70
 testapp_port = 9292
 
+При выполнении ДЗ по ansible сделано следующее:
+1. На локальную машину установлен ansible
+2. Часто используемые настройки вынесенны в файл ansible.cfg
+3. Созданные раннее в GCP виртуальные машины описаны в файле Inventory в формате INI
+4. Созданные раннее в GCP виртуальные машины описаны в файле Inventory в формате YAML
+5. Написан playbook, который устанавливает приложение reddit на машину appserver
+
+После удаления склонированного репозитория командой:
+ansible app -m command -a 'rm -rf ~/reddit'
+Следующее выполнение playbook из файла clone.yml привело к тому, что в состояние хоста были внесены изменения:
+appserver                  : ok=2    changed=1    unreachable=0    failed=0
+
