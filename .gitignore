@@ -5,3 +5,5 @@ packer/variables.json
 *.tfvars
 *.retry
 .terraform/
+jdauphant.nginx
+vault.key
