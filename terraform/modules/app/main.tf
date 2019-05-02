@@ -2,7 +2,7 @@ resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
   zone         = "${var.zone}"
-  tags         = ["reddit-app"]
+  tags         = ["reddit-app", "allow-puma-default"]
 
   boot_disk {
     initialize_params {
@@ -19,12 +19,12 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    ssh-keys = "maksim:${file(var.public_key_path)}"
+    ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 
   connection {
     type  = "ssh"
-    user  = "maksim"
+    user  = "appuser"
     agent = false
 
     # путь до приватного ключа

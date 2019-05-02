@@ -47,3 +47,10 @@ ansible app -m command -a 'rm -rf ~/reddit'
 Следующее выполнение playbook из файла clone.yml привело к тому, что в состояние хоста были внесены изменения:
 appserver                  : ok=2    changed=1    unreachable=0    failed=0
 
+При выполнении второго ДЗ по ansible сделано следующее:
+1. Создан playbook, в котором на хосты app и db происходит установка приложения reddit и БД MongoDb
+2. Созданный на первом шаге playbook разбит на сценарии: "Configure MongoDB", "Configure App" и "Deploy App"
+3. На основе сценариев из предыдущего шага созданы отдельные playbooks для развертывания Puma, MongoDb и деплоя приложения reddit
+4. Создан основной сценарий site.yml из которого осуществляется вызов предыдущих сценариев
+5. Изменен тип провижинга в packer шаблонах для создания образов reddit-app-base и reddit-db-base, теперь там используются сценарии ansible
+ 
