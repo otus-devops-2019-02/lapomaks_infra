@@ -16,7 +16,7 @@
     dest: /home/appuser/db_config
     owner: appuser
     group: appuser
- 
+
 - name: enable puma
   systemd: name=puma enabled=yes
 

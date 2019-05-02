@@ -4,7 +4,7 @@
   debug:
     msg: "This host is in {{ env }} environment!!!"
 
-- name: Change mongo config file    
+- name: Change mongo config file
   template:
       src: mongod.conf.j2
       dest: /etc/mongod.conf
